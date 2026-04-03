@@ -33,6 +33,6 @@ Lista de compras interativa. **Desafio proposto no curso da Rocketseat**
 
 1. **Baixe a pasta** do projeto
 2. **Abra `index.html`** no navegador
-3. **Pronto! Funciona 100% offline** 🎉
+
 
 
