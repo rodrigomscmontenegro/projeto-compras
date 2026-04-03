@@ -3,54 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quicklist - Sua lista de compras</title>
+    <title>Quicklist - Compras da semana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+
+    <main class="container">
+        <div class="logo-central">
+            <img src="./assets/logo.png" alt="Logo" class="logo-img">
+            <span class="brand-name">quicklist</span>
+        </div>
+
         <header>
-            <div class="logo">
-                <img src="logo.svg" alt="Quicklist"> 
-                </div>
-            
-            <button id="btn-back">← Voltar</button>
+            <a href="#" class="btn-back">
+                <span class="css-arrow"></span> Voltar
+            </a>
             <h1>Compras da semana</h1>
         </header>
 
-        <main>
-            <form id="item-form">
-                <input type="text" id="item-input" placeholder="Adicione um novo item" aria-label="Novo item">
+        <form id="add-item-form">
+            <div class="input-group">
+                <input type="text" id="item-input" placeholder="Adicione um novo item">
                 <button type="submit" id="add-button">Adicionar item</button>
-            </form>
+            </div>
+        </form>
 
-            <ul id="shopping-list">
-                <li class="item">
-                    <div class="item-info">
-                        <input type="checkbox">
-                        <span>Pão de forma</span>
-                    </div>
-                    <button class="remove-btn"><img src="./assets/Frame.png" alt=""></button>
-                </li>
-                <li class="item">
-                    <div class="item-info">
-                        <input type="checkbox">
-                        <span>Café preto</span>
-                    </div>
-                    <button class="remove-btn"><img src="./assets/Frame.png" alt="lixinho"></button>
-                </li>
+        <ul id="shopping-list">
             </ul>
-        </main>
 
-        <div id="alert-footer" class="hidden">
+        <div id="alert-message" class="alert hidden">
             <div class="alert-content">
-                <img src="./assets/warning-circle-filled.png" alt="simbolo de exclamação">
+                <img src="./assets/warning-circle-filled.png" alt="Erro">
                 <span>O item foi removido da lista</span>
             </div>
-            <button id="close-alert">
-                <img src="./assets/delete-small.png" alt="">
+            <button id="close-alert" class="btn-close-alert">
+                <img src="./assets/delete-small.png" alt="Fechar">
             </button>
         </div>
-    </div>
+    </main>
 
     <script src="script.js"></script>
 </body>

@@ -1,197 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 :root {
-  /* Colors */
-  --color-brand: #CA3884;
-  --color-brand-hover: #A52C6B;
-  --color-danger: #C93847;
-  
-  /* Backgrounds */
-  --bg-primary: #F4F5FB;
-  --bg-secondary: #FFFFFF;
-  
-  /* Content */
-  --content-primary: #080B12;
-  --content-secondary: #374151;
-  --content-tertiary: #9CA3AF;
-  
-  /* Borders */
-  --border-primary: #D1D5DB;
-  --border-hover: #B9C2D0;
+    --bg-primary: #F4F5FB;
+    --bg-secondary: #FFFFFF;
+    --color-brand: #CA3884;
+    --color-brand-hover: #A52C6B;
+    --color-danger: #C93847;
+    --content-primary: #080B12;
+    --content-secondary: #374151;
+    --border-primary: #D1D5DB;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--content-primary);
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 64px 20px;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--content-primary);
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
 }
 
 .container {
-  width: 100%;
-  max-width: 720px; /* Baseado no layout desktop */
-  background: var(--bg-secondary);
-  padding: 40px;
-  border-radius: 12px;
+    width: 100%;
+    max-width: 720px;
 }
 
-/* Header */
+/* --- LOGO CENTRALIZADO --- */
+.logo-central {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aqui garante o meio da página */
+    gap: 12px;
+    margin-bottom: 56px;
+    width: 100%;
+}
+
+.logo-img { height: 32px; }
+
+.brand-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--content-secondary);
+    letter-spacing: -1px;
+}
+
+/* --- CONTEÚDO ALINHADO À ESQUERDA --- */
 header {
-  margin-bottom: 32px;
+    text-align: left;
+    margin-bottom: 32px;
 }
 
-#btn-back {
-  background: none;
-  border: none;
-  color: var(--color-brand);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
+.btn-back {
+    text-decoration: none;
+    color: var(--color-brand);
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.css-arrow {
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid currentColor;
+    border-left: 2px solid currentColor;
+    transform: rotate(-45deg);
 }
 
 h1 {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--content-primary);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--content-primary);
+    margin-top: 8px;
 }
 
-/* Form */
-#item-form {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 40px;
+/* Form e Inputs */
+.input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
 }
 
-#item-input {
-  flex: 1;
-  padding: 12px 16px;
-  border: 1px solid var(--border-primary);
-  border-radius: 8px;
-  font-size: 16px;
-  color: var(--content-secondary);
+input[type="text"] {
+    flex: 1;
+    padding: 14px 16px;
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    outline: none;
 }
 
-#item-input:focus {
-  outline: none;
-  border-color: var(--color-brand);
+button#add-button {
+    background-color: var(--color-brand);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-#add-button {
-  background-color: var(--color-brand);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-#add-button:hover {
-  background-color: var(--color-brand-hover);
-}
-
-/* List Items */
-#shopping-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
+/* Lista de Itens */
 .item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  border: 1px solid var(--border-primary);
-  border-radius: 8px;
-  background-color: var(--bg-secondary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
 }
 
-.item:hover {
-  border-color: var(--border-hover);
+.item span { flex: 1; margin-left: 12px; }
+
+/* Alerta */
+.alert {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-danger);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 550px;
 }
 
-.item-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+.alert-content { display: flex; align-items: center; gap: 12px; }
 
-/* Checkbox Customizado */
-input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--color-brand);
-  cursor: pointer;
-}
-
-.item span {
-  font-size: 16px;
-  color: var(--content-secondary);
-}
-
-.completed span {
-  text-decoration: line-through;
-  color: var(--content-tertiary);
-}
-
-.remove-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  opacity: 0.5;
-}
-
-.remove-btn:hover {
-  opacity: 1;
-}
-
-/* Footer Alerta */
-#alert-footer {
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--color-danger);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 350px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+.hidden { display: none; }
 
 /* Responsividade Mobile */
-@media (max-width: 600px) {
-  #item-form {
-    flex-direction: column;
-  }
-  
-  #add-button {
-    width: 100%;
-  }
-
-  .container {
-    padding: 24px;
-  }
-}
-
-.hidden {
-  display: none !important;
+@media (max-width: 480px) {
+    .input-group { flex-direction: column; }
+    .logo-central { justify-content: center; } /* Mantém centro no mobile também */
 }
