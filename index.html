@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quicklist - Lista de Compras</title>
+    <title>Quicklist - Sua lista de compras</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <button id="btn-back">Voltar</button>
-            <h1>Minhas Compras</h1>
+            <div class="logo">
+                <img src="logo.svg" alt="Quicklist"> 
+                </div>
+            
+            <button id="btn-back">← Voltar</button>
+            <h1>Compras da semana</h1>
         </header>
 
         <main>
             <form id="item-form">
-                <input type="text" id="item-input" placeholder="Adicione um novo item..." aria-label="Novo item">
+                <input type="text" id="item-input" placeholder="Adicione um novo item" aria-label="Novo item">
                 <button type="submit" id="add-button">Adicionar item</button>
             </form>
 
@@ -25,13 +29,23 @@
                         <input type="checkbox">
                         <span>Pão de forma</span>
                     </div>
-                    <button class="remove-btn" title="Remover item">🗑️</button>
+                    <button class="remove-btn">🗑️</button>
+                </li>
+                <li class="item">
+                    <div class="item-info">
+                        <input type="checkbox">
+                        <span>Café preto</span>
+                    </div>
+                    <button class="remove-btn">🗑️</button>
                 </li>
             </ul>
         </main>
 
         <div id="alert-footer" class="hidden">
-            <span>O item foi removido da lista</span>
+            <div class="alert-content">
+                <span class="alert-icon">⚠️</span>
+                <span>O item foi removido da lista</span>
+            </div>
             <button id="close-alert">✕</button>
         </div>
     </div>
