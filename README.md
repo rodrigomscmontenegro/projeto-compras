@@ -1,7 +1,6 @@
 # Quicklist 📝
 
 [![Rocketseat](https://img.shields.io/badge/Rocketseat-blueviolet?style=for-the-badge&logo=rocketseat)](https://www.rocketseat.com.br/)
-![License](https://img.shields.io/badge/license-MIT-brightgreen)
 
 O **Quicklist** é uma aplicação de lista de compras inteligente desenvolvida como parte do **desafio prático da Rocketseat**. O projeto foca em manipulação avançada do DOM, persistência de dados e experiência do usuário (UX).
 
