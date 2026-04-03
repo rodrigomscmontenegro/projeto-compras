@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quicklist - Compras da semana</title>
+    <title>Quicklist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,38 +13,35 @@
 
     <main class="container">
         <div class="logo-central">
-            <img src="./assets/logo.png" alt="Logo" class="logo-img">
+            <img src="./assets/logo.png" alt="Logo">
             <span class="brand-name">quicklist</span>
         </div>
 
         <header>
-            <a href="#" class="btn-back">
-                <span class="css-arrow"></span> Voltar
-            </a>
+            <a href="#" class="btn-back"><span class="css-arrow"></span> Voltar</a>
             <h1>Compras da semana</h1>
         </header>
 
         <form id="add-item-form">
             <div class="input-group">
-                <input type="text" id="item-input" placeholder="Adicione um novo item">
+                <input type="text" id="item-input" placeholder="Adicione um novo item" autocomplete="off">
                 <button type="submit" id="add-button">Adicionar item</button>
             </div>
         </form>
 
-        <ul id="shopping-list">
-            </ul>
+        <ul id="shopping-list"></ul>
 
         <div id="alert-message" class="alert hidden">
-            <div class="alert-content">
+            <div class="alert-content" style="display: flex; align-items: center; gap: 12px;">
                 <img src="./assets/warning-circle-filled.png" alt="Erro">
                 <span>O item foi removido da lista</span>
             </div>
-            <button id="close-alert" class="btn-close-alert">
+            <button id="close-alert" style="background:transparent; border:none; cursor:pointer;">
                 <img src="./assets/delete-small.png" alt="Fechar">
             </button>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="./scripts.js"></script>
 </body>
 </html>
