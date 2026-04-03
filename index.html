@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <main class="container">
         <div class="logo-central">
             <img src="./assets/logo.png" alt="Logo">
@@ -25,18 +24,20 @@
         <form id="add-item-form">
             <div class="input-group">
                 <input type="text" id="item-input" placeholder="Adicione um novo item" autocomplete="off">
-                <button type="submit" id="add-button">Adicionar item</button>
+                <button type="submit" id="add-button" aria-label="Adicionar item">Adicionar item</button>
             </div>
         </form>
 
-        <ul id="shopping-list"></ul>
+        <div id="stats" class="stats" aria-live="polite">Carregando...</div>
 
-        <div id="alert-message" class="alert hidden">
+        <ul id="shopping-list" role="list"></ul>
+
+        <div id="alert-message" class="alert hidden" role="alert" aria-live="assertive">
             <div class="alert-content" style="display: flex; align-items: center; gap: 12px;">
                 <img src="./assets/warning-circle-filled.png" alt="Erro">
                 <span>O item foi removido da lista</span>
             </div>
-            <button id="close-alert" style="background:transparent; border:none; cursor:pointer;">
+            <button id="close-alert" style="background:transparent; border:none; cursor:pointer;" aria-label="Fechar alerta">
                 <img src="./assets/delete-small.png" alt="Fechar">
             </button>
         </div>

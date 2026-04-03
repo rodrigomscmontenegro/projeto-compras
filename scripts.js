@@ -3,61 +3,137 @@ const input = document.getElementById('item-input');
 const list = document.getElementById('shopping-list');
 const alertBox = document.getElementById('alert-message');
 const closeAlert = document.getElementById('close-alert');
+const stats = document.getElementById('stats');
+
+function saveItems() {
+    const items = [];
+    list.querySelectorAll('.item').forEach(li => {
+        const text = li.querySelector('span').textContent;
+        const checked = li.querySelector('.checkbox').checked;
+        items.push({text, checked});
+    });
+    localStorage.setItem('quicklist', JSON.stringify(items));
+}
+
+function loadItems() {
+    const saved = localStorage.getItem('quicklist');
+    if (saved) {
+        JSON.parse(saved).forEach(item => {
+            createItem(item.text);
+            const li = list.lastElementChild;
+            const checkbox = li.querySelector('.checkbox');
+            if (item.checked) {
+                checkbox.checked = true;
+                li.classList.add('completed');
+            }
+        });
+    } else {
+        ["Pão de forma", "Café preto", "Suco de laranja"].forEach(createItem);
+    }
+    updateStats();
+}
+
+function updateStats() {
+    const pending = list.querySelectorAll('.item:not(.completed)').length;
+    stats.textContent = `Pendentes: ${pending}`;
+}
 
 function createItem(text) {
     const li = document.createElement('li');
-    li.className = 'item';
+    li.className = 'item sortable';
+    li.draggable = true;
+    li.role = 'listitem';
 
     li.innerHTML = `
         <div class="item-left">
-            <input type="checkbox" class="checkbox">
+            <input type="checkbox" class="checkbox" aria-label="Marcar como comprado">
             <span>${text}</span>
         </div>
-        <button class="btn-delete">
+        <button class="btn-delete" aria-label="Remover item">
             <img src="./assets/Frame.png" alt="Excluir">
         </button>
     `;
 
-    // Evento de marcar como concluído
-    li.querySelector('.checkbox').onclick = (e) => {
-        li.style.opacity = e.target.checked ? "0.5" : "1";
-        li.querySelector('span').style.textDecoration = e.target.checked ? "line-through" : "none";
+    // Checkbox
+    const checkbox = li.querySelector('.checkbox');
+    checkbox.onclick = (e) => {
+        if (e.target.checked) {
+            li.classList.add('completed');
+        } else {
+            li.classList.remove('completed');
+        }
+        saveItems();
+        updateStats();
     };
 
-    // Evento de deletar (Aqui ativa o alerta)
+    // Delete
     li.querySelector('.btn-delete').onclick = () => {
         li.remove();
+        saveItems();
+        updateStats();
         showAlert();
     };
 
     list.appendChild(li);
+    saveItems();
+    updateStats();
 }
 
 function showAlert() {
     alertBox.classList.remove('hidden');
-    // Esconde o alerta após 3 segundos
     setTimeout(() => {
         alertBox.classList.add('hidden');
     }, 3000);
 }
 
-// Fechar alerta no botão X
 closeAlert.onclick = () => {
     alertBox.classList.add('hidden');
 };
 
-// Captura tanto o clique no botão quanto o Enter no teclado
+// Drag & Drop
+list.addEventListener('dragstart', e => {
+    e.target.classList.add('dragging');
+});
+list.addEventListener('dragend', e => {
+    e.target.classList.remove('dragging');
+    saveItems();
+});
+list.addEventListener('dragover', e => e.preventDefault());
+list.addEventListener('drop', e => {
+    e.preventDefault();
+    const dragging = list.querySelector('.dragging');
+    const afterElement = getDragAfterElement(list, e.clientY);
+    if (afterElement == null) {
+        list.appendChild(dragging);
+    } else {
+        list.insertBefore(dragging, afterElement);
+    }
+    saveItems();
+});
+
+function getDragAfterElement(container, y) {
+    const draggableElements = [...container.querySelectorAll('.sortable:not(.dragging)')];
+    return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+            return { offset: offset, element: child };
+        } else {
+            return closest;
+        }
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
+}
+
+// Form submit
 form.addEventListener('submit', (e) => {
-    e.preventDefault(); // Impede o recarregamento da página
-
+    e.preventDefault();
     const value = input.value.trim();
-
     if (value !== "") {
         createItem(value);
-        input.value = ""; // Limpa o campo
-        input.focus();    // Mantém o cursor no campo
+        input.value = "";
+        input.focus();
     }
 });
 
-// Itens sugeridos para iniciar
-["Pão de forma", "Café preto", "Suco de laranja", "Bolacha"].forEach(createItem);
+// Inicializar
+loadItems();
