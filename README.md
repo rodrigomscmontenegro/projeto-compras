@@ -2,15 +2,17 @@
 
 [![Rocketseat](https://img.shields.io/badge/Rocketseat-blueviolet?style=for-the-badge&logo=rocketseat)](https://www.rocketseat.com.br/)
 
-Lista de compras interativa. **Desafio proposto no curso da Rocketseat** 
+Lista de compras **Rocketseat Challenge** 
 
 ## 🚀 Tecnologias
-
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Responsive](https://img.shields.io/badge/Responsive-00D4AA?style=for-the-badge&logo=bulma&logoColor=white)
-![A11y](https://img.shields.io/badge/Acessível-4F46E5?style=for-the-badge&logo=a11y-project&logoColor=white)
+
+## 📱 Demo ao vivo
+[![Demo Quicklist](https://img.shields.io/badge/Quicklist-Live-7159c1?style=for-the-badge&logo=github&logoColor=white)](https://rodrigomscmontenegro.github.io/projeto-compras/)
+
+**[Abrir Demo](https://rodrigomscmontenegro.github.io/projeto-compras/)**
 
 ## ✨ Funcionalidades
 
@@ -30,9 +32,16 @@ Lista de compras interativa. **Desafio proposto no curso da Rocketseat**
 - **Acessibilidade completa** (teclado + screen readers)
 
 ## 🛠️ Como Executar
+1. Baixe a pasta
+2. Abra `index.html`
 
-1. **Baixe a pasta** do projeto
-2. **Abra `index.html`** no navegador
+## 📁 Estrutura
+projet-compras/
+├── index.html
+├── style.css
+├── scripts.js
+└── assets/
 
-
-
+<div align="center">
+![Rocketseat](https://img.shields.io/badge/Rocketseat-blueviolet?style=for-the-badge&logo=rocketseat)
+</div>
