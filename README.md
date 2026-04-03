@@ -36,12 +36,8 @@ Lista de compras **Rocketseat Challenge**
 2. Abra `index.html`
 
 ## 📁 Estrutura
-projet-compras/
+projeto-compras/
 ├── index.html
 ├── style.css
 ├── scripts.js
 └── assets/
-
-<div align="center">
-![Rocketseat](https://img.shields.io/badge/Rocketseat-blueviolet?style=for-the-badge&logo=rocketseat)
-</div>
