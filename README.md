@@ -1,43 +1,68 @@
+````markdown
 # Quicklist 📝
 
 [![Rocketseat](https://img.shields.io/badge/Rocketseat-blueviolet?style=for-the-badge&logo=rocketseat)](https://www.rocketseat.com.br/)
+![License](https://img.shields.io/badge/license-MIT-brightgreen)
 
-Lista de compras **Rocketseat Challenge** 
+O **Quicklist** é uma aplicação de lista de compras inteligente desenvolvida como parte do desafio prático da **Rocketseat**. O projeto foca em manipulação avançada do DOM, persistência de dados e experiência do usuário (UX).
 
 ## 🚀 Tecnologias
+
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 ## 📱 Demo ao vivo
-[![Demo Quicklist](https://img.shields.io/badge/Quicklist-Live-7159c1?style=for-the-badge&logo=github&logoColor=white)](https://rodrigomscmontenegro.github.io/projeto-compras/)
 
-**[Abrir Demo](https://rodrigomscmontenegro.github.io/projeto-compras/)**
+Confira o projeto em execução:
+
+**[🔗 Abrir Demo do Quicklist](https://rodrigomscmontenegro.github.io/projeto-compras/)**
+
+---
 
 ## ✨ Funcionalidades
 
 ### Requisitos do Desafio (Rocketseat) ✅
-- [x] Título + botão "Voltar"
-- [x] Input + botão "Adicionar item"  
-- [x] Lista com checkbox/nome/lixeira
-- [x] Itens pré-cadastrados
-- [x] Adicionar/limpar input (ignora vazio)
-- [x] Remover + alerta inferior
+- [x] **Interface Fiel ao Figma:** Layout responsivo e tipografia idêntica ao projeto original.
+- [x] **Gestão de Itens:** Adicionar novos produtos e remover itens com facilidade.
+- [x] **Feedback de Remoção:** Alerta visual na parte inferior da tela ao excluir um item.
+- [x] **Validação:** Sistema que impede a adição de campos vazios.
 
-### Melhorias Extras ✅
-- **Persistência LocalStorage** (não perde ao F5)
-- **Contador pendentes** ("Pendentes: X")
-- **Drag & Drop** (reordene arrastando)
-- **Design responsivo** (celular/tablet)
-- **Acessibilidade completa** (teclado + screen readers)
+### Diferenciais Implementados 🌟
+- [x] **Persistência com LocalStorage:** Seus itens ficam salvos mesmo se você fechar o navegador.
+- [x] **Interatividade Drag & Drop:** Reordene sua lista de compras arrastando os itens para cima ou para baixo.
+- [x] **Contador de Pendentes:** Monitoramento em tempo real de quantos itens ainda faltam ser comprados.
+- [x] **Acessibilidade:** Uso de atributos `ARIA`, suporte a leitores de tela e navegação por teclado.
+
+---
 
 ## 🛠️ Como Executar
-1. Baixe a pasta
-2. Abra `index.html`
 
-## 📁 Estrutura
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/rodrigomscmontenegro/projeto-compras.git](https://github.com/rodrigomscmontenegro/projeto-compras.git)
+````
+
+2.  **Acesse a pasta:**
+    ```bash
+    cd projeto-compras
+    ```
+3.  **Inicie o projeto:**
+    Abra o arquivo `index.html` no seu navegador ou utilize a extensão **Live Server** do VS Code.
+
+-----
+
+## 📁 Estrutura de Arquivos
+
+```text
 projeto-compras/
-├── index.html
-├── style.css
-├── scripts.js
-└── assets/
+├── index.html       # Estrutura semântica e acessível
+├── style.css        # Estilização com variáveis e animações
+├── scripts.js       # Lógica (Storage, Drag&Drop e DOM)
+└── assets/          # Assets visuais (Logo e ícones)
+```
+
+-----
+
+Desenvolvido com 💜 por [Rodrigo Montenegro](https://www.google.com/search?q=https://github.com/rodrigomscmontenegro)
+
