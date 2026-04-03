@@ -1,41 +1,41 @@
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quicklist</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicklist - Lista de Compras</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <button class="back-btn">← Voltar</button>
-    <h1>Lista de Compras</h1>
+    <div class="container">
+        <header>
+            <button id="btn-back">Voltar</button>
+            <h1>Minhas Compras</h1>
+        </header>
 
-    <div class="input-group">
-      <input type="text" id="itemInput" placeholder="Digite um item...">
-      <button id="addBtn">Adicionar</button>
+        <main>
+            <form id="item-form">
+                <input type="text" id="item-input" placeholder="Adicione um novo item..." aria-label="Novo item">
+                <button type="submit" id="add-button">Adicionar item</button>
+            </form>
+
+            <ul id="shopping-list">
+                <li class="item">
+                    <div class="item-info">
+                        <input type="checkbox">
+                        <span>Pão de forma</span>
+                    </div>
+                    <button class="remove-btn" title="Remover item">🗑️</button>
+                </li>
+            </ul>
+        </main>
+
+        <div id="alert-footer" class="hidden">
+            <span>O item foi removido da lista</span>
+            <button id="close-alert">✕</button>
+        </div>
     </div>
 
-    <ul id="list">
-      <li>
-        <input type="checkbox">
-        <span>Arroz</span>
-        <button class="delete">🗑️</button>
-      </li>
-      <li>
-        <input type="checkbox">
-        <span>Feijão</span>
-        <button class="delete">🗑️</button>
-      </li>
-      <li>
-        <input type="checkbox">
-        <span>Leite</span>
-        <button class="delete">🗑️</button>
-      </li>
-    </ul>
-
-    <div id="toast" class="hidden">Item removido!</div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
